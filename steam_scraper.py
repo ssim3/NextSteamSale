@@ -33,7 +33,7 @@ def options():
         option = int(input("\nOption: "))
         assert 1 <= option <= 2
 
-        get_game_data() if option == 1 else print("Thank you for using...")
+        return option
         
     except (ValueError, AssertionError):
         print("Invalid input!")
@@ -66,8 +66,10 @@ def get_game_data():
     search.send_keys(game)
     search.submit()
 
+    time.sleep(1)
+
     try:
-        game = driver.find_element(By.CLASS_NAME, "card__img").click()
+        driver.find_element(By.CLASS_NAME, "card__img").click()
     except:
         print("Game not found! Please reload the program...")
         exit()
@@ -86,10 +88,36 @@ def get_game_data():
 
 
     ''' Scrolls down the page to logs'''
-    driver.execute_script("window.scrollTo(0, 1000);")
+    driver.execute_script("window.scrollTo(0, 2000);")
+
+    '''Saving all the logs as a list...Using pandas now :D'''
+    
+    print("Getting information on {}...".format(game))
+
+    logs = driver.find_elements(By.CLASS_NAME, "lg2__content")
+    
+    dates = []
+    prices = []
+    percentages = []
+
+    ''' 
+        Loops through every price log, append the date, price and percentage off
+        as separate lists.
+    '''
+    for i in logs:
+        date = i.find_element(By.CLASS_NAME,"lg2__time-rel")
+        dates.append(i.text[:10])
+
+        price = i.find_element(By.CLASS_NAME, "lg2__price.lg2__price--new")
+        prices.append(price.text)
+
+        percentage = i.find_element(By.CLASS_NAME, "lg2__cut")
+        percentages.append(percentage.text)
 
 
-    time.sleep(10)
+    return pd.DataFrame({"Date": dates, "Price": prices})
+    
+
 
 def error():
     print("You might be in the wrong page. Please reload the program...")
@@ -97,7 +125,6 @@ def error():
 
 def main():
     welcome()
-    options()
+    return options()
     
-main()
     
