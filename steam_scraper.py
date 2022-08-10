@@ -33,13 +33,13 @@ def options():
         option = int(input("\nOption: "))
         assert 1 <= option <= 2
 
-        GetGameData() if option == 1 else print("Thank you for using...")
+        get_game_data() if option == 1 else print("Thank you for using...")
         
     except (ValueError, AssertionError):
         print("Invalid input!")
         options()
   
-def GetGameData():
+def get_game_data():
     
     print("\n============================")
     print("The program will visit steamDB and download a csv file into your current directory")
@@ -57,7 +57,7 @@ def GetGameData():
 
     'Visits isthereanydeal.com to see price history, waits for 5 seconds for site to load'
     driver.get('https://isthereanydeal.com/')
-    time.sleep(3)
+    time.sleep(2)
     
     '''
     Searches up the users game of choice on the website
@@ -66,12 +66,34 @@ def GetGameData():
     search.send_keys(game)
     search.submit()
 
-    game = driver.find_element(By.CLASS_NAME, "card__img").click()
+    try:
+        game = driver.find_element(By.CLASS_NAME, "card__img").click()
+    except:
+        print("Game not found! Please reload the program...")
+        exit()
+
+    time.sleep(1)
+
+    ''' Moves to the History tab '''
+    try:
+        history = driver.find_elements(By.CLASS_NAME, "gameNav__link")
+        history[1].click()
+    except:
+        error()
+
+    ''' Filters the page to show only steam prices'''
+    driver.get(driver.current_url + "/?shop%5B%5D=steam")
+
+
+    ''' Scrolls down the page to logs'''
+    driver.execute_script("window.scrollTo(0, 1000);")
+
 
     time.sleep(10)
 
-   
-        
+def error():
+    print("You might be in the wrong page. Please reload the program...")
+    exit()
 
 def main():
     welcome()
