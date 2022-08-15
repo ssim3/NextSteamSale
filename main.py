@@ -1,9 +1,15 @@
 import pandas as pd
 import steam_scraper as ss
 from datetime import date
+
+
 option = ss.main()
 
-df, game = ss.get_game_data() if option == 1 else exit()
+if option == 1:
+    df, game = ss.get_game_data() 
+else:
+   print("See you next time!")
+   raise SystemExit(0)
 
 df.Date = pd.to_datetime(df.Date, format='%Y%m%d')
 
@@ -45,9 +51,13 @@ cheapest_sales = df.groupby("Month").Price.min()
 print("\nAll sales that will occur after {}".format(date.today()))
 
 print("---------------------------------------------------------------")
+df["Date"] = df["Date"].dt.strftime("%m-%d")
 
-print(df)
-
+if not df.empty:
+    print(df)
+else:
+    print("No records of sales for {}".format(game))
+    
 print("---------------------------------------------------------------")
 
 
@@ -58,7 +68,9 @@ print("---------------------------------------------------------------")
 print("\nMonths and lowest prices for sales that will occur after {}:".format(date.today()))
 
 print("---------------------------------------------------------------")
-
-print(cheapest_sales)
+if not cheapest_sales.empty:
+    print(cheapest_sales)
+else:
+    print("No records of sales for {}".format(game))
 
 print("---------------------------------------------------------------")

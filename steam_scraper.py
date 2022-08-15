@@ -6,19 +6,19 @@ Created on Wed Aug 10 11:17:12 2022
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 import pandas as pd
 import time
 
 
 def welcome():
     print("================================================")
-    print('''                                                       
-     _____         _   _____               _____     _     
-    |   | |___ _ _| |_|   __|___ _____ ___|   __|___| |___ 
-    | | | | -_|_'_|  _|  |  | .'|     | -_|__   | .'| | -_|
-    |_|___|___|_,_|_| |_____|__,|_|_|_|___|_____|__,|_|___|
-                                                           ''')                                                      
+    print('''
+ _____         _   _____ _                 _____     _     
+|   | |___ _ _| |_|   __| |_ ___ ___ _____|   __|___| |___ 
+| | | | -_|_'_|  _|__   |  _| -_| .'|     |__   | .'| | -_|
+|_|___|___|_,_|_| |_____|_| |___|__,|_|_|_|_____|__,|_|___|
+
+          ''')                                                    
     print("================================================")
     
     print("\nFind out when your favorite steam game will go on sale next!")
@@ -42,8 +42,8 @@ def options():
 def get_game_data():
     
     print("\n============================")
-    print("The program will visit steamDB and download a csv file into your current directory")
-    print("When the website is loaded, a captcha will have to be manually completed (15 Seconds)...")
+    print("The program will visit isthereanydeal.com to gather data on your game's steam sales.")
+    print("Please do not touch the website while the programming is running...")
     print("============================")
     
     
