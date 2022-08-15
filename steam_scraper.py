@@ -29,15 +29,10 @@ def options():
     print("2. Quit")
     print("=======================")
     
-    try:
-        option = int(input("\nOption: "))
-        assert 1 <= option <= 2
 
-        return option
-        
-    except (ValueError, AssertionError):
-        print("Invalid input!")
-        options()
+    option = input("\nOption: ")
+    return option
+
   
 def get_game_data():
     
@@ -98,7 +93,6 @@ def get_game_data():
     
     dates = []
     prices = []
-    percentages = []
     regulars = []
 
     ''' 
