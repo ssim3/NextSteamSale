@@ -1,5 +1,3 @@
-# NextSteamSale
-
 ![alt text](https://github.com/ssim3/NextSteamSale/blob/master/cover.png?raw=true)
 
 
