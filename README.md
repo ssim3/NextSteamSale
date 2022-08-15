@@ -9,7 +9,7 @@ Created using Selenium and Pandas for Web Scraping and Data Wrangling respective
 
 ## How to use:
 
-Run main.exe using a python compiler , ensure that steam_scraper.py is in the same directory.
+Run main.py using a python compiler , ensure that steam_scraper.py is in the same directory.
 
 ### NOTE
 
