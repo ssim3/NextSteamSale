@@ -24,7 +24,8 @@ Pandas : `pip install pandas`
 If you download all files, ensure that chromedriver.exe is placed in the same directory as the program
 
 ## Raising issues:
-As the program uses CSS Selectors to get the websites elements, it is likely that the websites html will change and throw an error in the program. <br>
+As the program uses CSS Selectors to get the websites elements, it is likely that the websites html will change and throw an error in the program. 
+<br>
 Do raise an issue in the case that this happens as it would help myself and many other users :D
 
 ## Credits:
