@@ -32,16 +32,18 @@ if month == 12:
 ''' Only gets the records after todays month '''
 df = df.loc[df["Date"].dt.month > month]
 
-''' Gets the amount that the game is off by, then removes all the rows where game does not have sale '''
+''' 
+    Gets the amount that the game is off by
+    then removes all the rows where game does not have sale 
+'''
+
 df["Sale"] = df["Regular Price"] - df["Price"]
+
 df = df.drop(df[df["Sale"] == 0].index)
 
 
 ''' Groups the rows by month, then gets the cheapest price '''
 cheapest_sales = df.groupby("Month").Price.min()
-
-
-
 
 
 '''
