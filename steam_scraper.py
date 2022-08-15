@@ -99,23 +99,33 @@ def get_game_data():
     dates = []
     prices = []
     percentages = []
+    regulars = []
 
     ''' 
         Loops through every price log, append the date, price and percentage off
         as separate lists.
     '''
     for i in logs:
-        date = i.find_element(By.CLASS_NAME,"lg2__time-rel")
-        dates.append(i.text[:10])
+        try:
+            date = i.find_element(By.CLASS_NAME,"lg2__time-rel")
+            dates.append("".join(date.text[:10].split("-")))
 
-        price = i.find_element(By.CLASS_NAME, "lg2__price.lg2__price--new")
-        prices.append(price.text)
+            price = i.find_element(By.CLASS_NAME, "lg2__price.lg2__price--new")
+            prices.append(price.text)
+            
+            regular = i.find_element(By.CLASS_NAME, "lg2__price")
+            regulars.append(regular.text)
+            
+        except:
+            error()
+    
+    ''' Gets rid of empty dates created for some reason '''
+    dates = [x for x in dates if x != ""]
+    prices = [float(y[1:]) for y in prices if y != ""]
+    regulars = [float(z[1:]) for z in regulars if z != ""]
 
-        percentage = i.find_element(By.CLASS_NAME, "lg2__cut")
-        percentages.append(percentage.text)
-
-
-    return pd.DataFrame({"Date": dates, "Price": prices})
+    
+    return pd.DataFrame({"Date": dates, "Price": prices, "Regular Price": regulars}), game
     
 
 
