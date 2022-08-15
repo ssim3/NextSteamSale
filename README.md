@@ -12,9 +12,8 @@ Created using Selenium and Pandas for Web Scraping and Data Wrangling respective
 Run main.py using a python compiler , ensure that steam_scraper.py is in the same directory.
 
 ### NOTE
+For some reason, the default python compiler instantly closes after running main.py <br>
 
-For some reason, the python compiler instantly closes after running main.py <br>
-Using an IDE with a built in compiler is an alternative.
 
 ## Modules:
 
