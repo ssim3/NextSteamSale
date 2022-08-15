@@ -18,8 +18,8 @@ Using an IDE with a built in compiler is an alternative.
 
 ## Modules:
 
-Selenium : pip install selenium <br>
-Pandas : pip install pandas
+Selenium : `pip install selenium ` <br>
+Pandas : `pip install pandas`
 
 ## Requirements:
 If you download all files, ensure that chromedriver.exe is placed in the same directory as the program
