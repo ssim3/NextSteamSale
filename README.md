@@ -3,7 +3,7 @@
 ![alt text](https://github.com/ssim3/NextSteamSale/blob/master/cover.png?raw=true)
 
 
-# Find out when your favorite steam game goes on sale next!
+# Find out when your favorite *Steam* game goes on sale next!
 
 This project allows users to find out when their steam game goes on sale next.
 
