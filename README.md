@@ -15,8 +15,8 @@ Run main.exe using a python compiler , ensure that steam_scraper.py is in the sa
 
 ## Modules:
 
-Selenium : pip install selenium
-pandas : pip install pandas
+Selenium : pip install selenium <br>
+Pandas : pip install pandas
 
 ## Requirements:
 If you download all files, ensure that chromedriver.exe is placed in the same directory as the program
