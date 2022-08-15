@@ -3,13 +3,21 @@
 ![alt text](https://github.com/ssim3/NextSteamSale/blob/master/cover.png?raw=true)
 
 
-Find out when your favorite steam game goes on sale next!
+# Find out when your favorite steam game goes on sale next!
 
 This project allows users to find out when their steam game goes on sale next.
 
 Created using Selenium and Pandas for Web Scraping and Data Wrangling respectively.
 
-Credits:
+## Modules:
+
+Selenium : pip install selenium
+pandas : pip install pandas
+
+## Requirements:
+If you download all files, ensure that chromedriver.exe is placed in the same directory as the program
+
+## Credits:
 
 Logo : https://www.namecheap.com/logo-maker
 Pandas Documentation : https://pandas.pydata.org/docs/
