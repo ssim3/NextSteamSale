@@ -21,6 +21,6 @@ If you download all files, ensure that chromedriver.exe is placed in the same di
 
 ## Credits:
 
-Logo : https://www.namecheap.com/logo-maker
-Pandas Documentation : https://pandas.pydata.org/docs/
-Selenium Tutorials : https://www.toolsqa.com/selenium-webdriver/css-selectors-in-selenium/
+Logo : https://www.namecheap.com/logo-maker <br>
+Pandas Documentation : https://pandas.pydata.org/docs/ <br>
+Selenium Tutorials : https://www.toolsqa.com/selenium-webdriver/css-selectors-in-selenium/ <br>
