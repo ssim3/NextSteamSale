@@ -9,6 +9,10 @@ This project allows users to find out when their steam game goes on sale next.
 
 Created using Selenium and Pandas for Web Scraping and Data Wrangling respectively.
 
+## How to use:
+
+Run main.exe using a python compiler , ensure that steam_scraper.py is in the same directory.
+
 ## Modules:
 
 Selenium : pip install selenium
